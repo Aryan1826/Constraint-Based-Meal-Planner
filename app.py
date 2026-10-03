@@ -18,8 +18,6 @@ st.set_page_config(
 init_session_state()
 load_css()
 
-# Render Brand Header in Sidebar
-render_sidebar_brand()
 
 # Define Multi-page Navigation
 pages = [

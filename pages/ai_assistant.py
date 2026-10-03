@@ -182,8 +182,8 @@ user_query = st.chat_input("Ask something about your meals, recipes, ingredients
 if user_query:
     execute_query(user_query)
 
-st.markdown("<br>", unsafe_allow_html=True)
 st.caption(
+
     "⚠️ **Educational Project Notice:** NutriGen AI provides Generative AI culinary recommendations and approximate nutrition estimates. "
     "Consult qualified healthcare professionals or dietitians for clinical dietary advice."
 )

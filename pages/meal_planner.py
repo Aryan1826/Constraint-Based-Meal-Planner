@@ -178,7 +178,6 @@ with tab_planner:
             placeholder="e.g., Focus on iron-rich leafy greens, or include more moong dal"
         )
 
-        st.markdown("<br>", unsafe_allow_html=True)
         generate_clicked = st.button("✨ Generate Meal Plan", type="primary", use_container_width=True)
 
     # 3. Handle Generation Trigger with Prompt Chaining Pipeline
@@ -563,7 +562,6 @@ with tab_compare:
         final_val = final_data.get("validation", {})
         final_metrics = final_val.get("metrics", {})
 
-        st.markdown("<br>", unsafe_allow_html=True)
         col_v1, col_final = st.columns(2, gap="large")
 
         # Column 1: Prompt V1

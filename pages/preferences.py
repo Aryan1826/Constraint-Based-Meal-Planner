@@ -124,7 +124,6 @@ with col_form:
             placeholder="e.g., Mushrooms, Very spicy food, Excess oil"
         )
 
-        st.markdown("<br>", unsafe_allow_html=True)
         btn_label = "💾 Update Preferences" if current_profile.get("name") else "💾 Save Preferences"
         save_submitted = st.form_submit_button(btn_label, use_container_width=True, type="primary")
 
@@ -174,7 +173,6 @@ with col_form:
             st.rerun()
 
     # Reset / Clear Profile Action
-    st.markdown("<br>", unsafe_allow_html=True)
     if st.button("🔄 Reset to Defaults", use_container_width=True, help="Reset profile back to default template without altering fridge inventory."):
         st.session_state.user_profile = {
             "name": "",
@@ -231,7 +229,6 @@ with col_summary:
             else:
                 st.caption("No allergies recorded.")
                 
-            st.markdown("<br>", unsafe_allow_html=True)
             avoids = prof.get("foods_to_avoid", [])
             if avoids:
                 avoid_badges = "".join([f"<span class='badge badge-orange'>{a}</span>" for a in avoids])

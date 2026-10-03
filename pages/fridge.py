@@ -116,8 +116,6 @@ with m4:
         unsafe_allow_html=True
     )
 
-st.markdown("<br>", unsafe_allow_html=True)
-
 # Expiring Soon Section
 st.markdown("### ⚠️ Expiring Soon")
 if expiring_items:
@@ -173,7 +171,6 @@ with col_form:
         cat_input = st.selectbox("Category", options=ALLOWED_INGREDIENT_CATEGORIES, index=0)
         expiry_input = st.date_input("Expiry Date", value=date.today() + timedelta(days=7))
         
-        st.markdown("<br>", unsafe_allow_html=True)
         add_submitted = st.form_submit_button("➕ Add Ingredient", use_container_width=True, type="primary")
 
     if add_submitted:
@@ -286,8 +283,6 @@ with col_list:
                         st.session_state.fridge_items = [i for i in st.session_state.fridge_items if i["id"] != item["id"]]
                         st.success("✅ Ingredient removed.")
                         st.rerun()
-
-st.markdown("<br>", unsafe_allow_html=True)
 
 # Fridge Context Summary
 st.markdown("### 🧺 Current Ingredient Context")

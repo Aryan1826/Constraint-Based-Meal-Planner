@@ -1,4 +1,4 @@
-/* NutriGen AI - Modern Streamlit Custom Styles */
+/* NutriGen AI - Modern Streamlit Custom Responsive Styles */
 
 /* Root Variables */
 :root {
@@ -10,34 +10,59 @@
     --muted-text: #6b7280;
     --card-bg: #ffffff;
     --card-border: #e5e7eb;
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-    --border-radius: 12px;
+    --card-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+    --hover-shadow: 0 8px 12px -2px rgba(0, 0, 0, 0.07), 0 3px 6px -1px rgba(0, 0, 0, 0.04);
+    --border-radius: 10px;
+}
+
+/* Remove default excess Streamlit top/bottom whitespace */
+.block-container,
+div[data-testid="stAppViewBlockContainer"] {
+    padding-top: 1.25rem !important;
+    padding-bottom: 2rem !important;
+    padding-left: 1.75rem !important;
+    padding-right: 1.75rem !important;
+    max-width: 100% !important;
+}
+
+/* Compact Sidebar Spacing */
+section[data-testid="stSidebar"] {
+    padding-top: 0.5rem !important;
+}
+
+section[data-testid="stSidebar"] > div:first-child {
+    padding-top: 0.75rem !important;
+}
+
+[data-testid="stSidebarNav"] {
+    padding-top: 0.25rem !important;
 }
 
 /* Header & Banner styling */
 .main-header {
     background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
-    padding: 24px 28px;
-    border-radius: 16px;
+    padding: 16px 22px;
+    border-radius: 12px;
     color: white !important;
-    margin-bottom: 24px;
-    box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.25);
+    margin-bottom: 14px;
+    box-shadow: 0 4px 14px -2px rgba(16, 185, 129, 0.22);
 }
 
 .main-header h1 {
     color: white !important;
-    font-size: 1.9rem !important;
+    font-size: 1.65rem !important;
     font-weight: 700 !important;
-    margin: 0 0 6px 0 !important;
+    margin: 0 0 4px 0 !important;
     letter-spacing: -0.02em;
+    line-height: 1.25;
 }
 
 .main-header p {
     color: #e6fffa !important;
-    font-size: 1.05rem !important;
+    font-size: 0.95rem !important;
     margin: 0 !important;
     opacity: 0.95;
+    line-height: 1.35;
 }
 
 /* Metric Cards */
@@ -45,7 +70,7 @@
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: var(--border-radius);
-    padding: 20px;
+    padding: 14px 18px;
     box-shadow: var(--card-shadow);
     transition: all 0.2s ease-in-out;
     text-align: left;
@@ -59,24 +84,25 @@
 }
 
 .metric-title {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--muted-text);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .metric-value {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 800;
     color: #111827;
     margin: 0;
+    line-height: 1.2;
 }
 
 .metric-icon {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
+    font-size: 1.35rem;
+    margin-bottom: 4px;
     display: inline-block;
 }
 
@@ -85,8 +111,8 @@
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: var(--border-radius);
-    padding: 24px;
-    margin-bottom: 20px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
     box-shadow: var(--card-shadow);
 }
 
@@ -95,16 +121,16 @@
     background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
     border: 1px solid #cbd5e1;
     border-radius: 12px;
-    padding: 20px 24px;
-    margin-top: 20px;
+    padding: 16px 20px;
+    margin-top: 12px;
     box-shadow: var(--card-shadow);
 }
 
 .profile-summary-header {
     border-bottom: 2px solid #e2e8f0;
-    padding-bottom: 10px;
-    margin-bottom: 16px;
-    font-size: 1.1rem;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
     font-weight: 700;
     color: #0f172a;
     display: flex;
@@ -113,14 +139,14 @@
 }
 
 .profile-item {
-    margin-bottom: 8px;
-    font-size: 0.95rem;
+    margin-bottom: 6px;
+    font-size: 0.92rem;
     color: #334155;
 }
 
 .profile-item strong {
     color: #0f172a;
-    min-width: 140px;
+    min-width: 130px;
     display: inline-block;
 }
 
@@ -128,44 +154,45 @@
 .expiring-alert-card {
     background-color: #fffbeb;
     border: 1px solid #fde68a;
-    border-left: 5px solid #f59e0b;
-    border-radius: 10px;
-    padding: 14px 18px;
-    margin-bottom: 16px;
+    border-left: 4px solid #f59e0b;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
     color: #92400e;
+    font-size: 0.92rem;
 }
 
 /* Context Summary Box */
 .context-summary-box {
     background-color: #f8fafc;
     border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 18px 22px;
-    margin-top: 24px;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-top: 12px;
 }
 
 /* Meal Plan Day Card */
 .day-card {
     background: #fafafa;
     border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 16px 20px;
-    margin-bottom: 14px;
-    border-left: 5px solid #10b981;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border-left: 4px solid #10b981;
     transition: all 0.15s ease;
 }
 
 .day-card:hover {
     background: #ffffff;
     border-color: #10b981;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .day-title {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #1f2937;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -173,29 +200,31 @@
 
 .meal-row {
     display: flex;
-    margin-bottom: 6px;
-    font-size: 0.95rem;
+    margin-bottom: 5px;
+    font-size: 0.92rem;
 }
 
 .meal-label {
     font-weight: 600;
-    width: 90px;
+    width: 85px;
     color: #4b5563;
+    flex-shrink: 0;
 }
 
 .meal-name {
     color: #111827;
     font-weight: 500;
+    word-break: break-word;
 }
 
 /* Badge styling */
 .badge {
     display: inline-block;
-    padding: 4px 10px;
+    padding: 3px 9px;
     border-radius: 9999px;
     font-size: 0.75rem;
     font-weight: 600;
-    margin-right: 6px;
+    margin-right: 4px;
     margin-bottom: 4px;
 }
 
@@ -232,29 +261,8 @@
 /* Recipe Card Styling */
 .recipe-card-header {
     border-bottom: 1px solid #f3f4f6;
-    padding-bottom: 12px;
-    margin-bottom: 12px;
-}
-
-/* Sidebar Branding */
-.sidebar-brand {
-    padding: 12px 0 18px 0;
-    text-align: center;
-    border-bottom: 1px solid #e5e7eb;
-    margin-bottom: 16px;
-}
-
-.sidebar-title {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: #10b981;
-    margin: 0;
-}
-
-.sidebar-subtitle {
-    font-size: 0.82rem;
-    color: #6b7280;
-    margin: 4px 0 0 0;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 /* Info Box / Context Banner */
@@ -262,13 +270,115 @@
     background-color: #eff6ff;
     border: 1px solid #bfdbfe;
     color: #1e40af;
-    padding: 12px 16px;
+    padding: 10px 14px;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
+/* Tighten Streamlit default gaps */
+div[data-testid="stVerticalBlock"] {
+    gap: 0.65rem !important;
+}
+
+div[data-testid="stHorizontalBlock"] {
+    gap: 0.75rem !important;
+}
+
+/* Responsive Rules for Mobile and Tablet */
+@media screen and (max-width: 768px) {
+    .block-container,
+    div[data-testid="stAppViewBlockContainer"] {
+        padding-top: 0.75rem !important;
+        padding-bottom: 1.5rem !important;
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    .main-header {
+        padding: 12px 14px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .main-header h1 {
+        font-size: 1.35rem !important;
+    }
+
+    .main-header p {
+        font-size: 0.85rem !important;
+    }
+
+    .metric-card {
+        padding: 10px 12px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .metric-value {
+        font-size: 1.35rem !important;
+    }
+
+    .content-card {
+        padding: 12px 14px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .profile-summary-box {
+        padding: 12px 14px !important;
+        margin-top: 10px !important;
+    }
+
+    .profile-summary-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+    }
+
+    .profile-item strong {
+        min-width: 100px !important;
+    }
+
+    .day-card {
+        padding: 12px 14px !important;
+    }
+
+    .meal-row {
+        flex-direction: column !important;
+        gap: 2px !important;
+        margin-bottom: 6px !important;
+    }
+
+    .meal-label {
+        width: auto !important;
+        font-size: 0.82rem !important;
+    }
+
+    /* Wrap columns cleanly on mobile */
+    div[data-testid="column"] {
+        min-width: 100% !important;
+        flex: 1 1 100% !important;
+    }
+
+    .stButton button {
+        width: 100% !important;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .block-container,
+    div[data-testid="stAppViewBlockContainer"] {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    .main-header {
+        padding: 14px 18px !important;
+    }
+
+    .main-header h1 {
+        font-size: 1.5rem !important;
+    }
+}

@@ -514,17 +514,7 @@ def render_header(title: str, subtitle: str, icon: str = "🥗"):
 
 
 def render_sidebar_brand():
-    """Render sidebar branding."""
-    st.sidebar.markdown(
-        """
-        <div class="sidebar-brand">
-            <div style="font-size: 2rem; margin-bottom: 4px;">🥗</div>
-            <div class="sidebar-title">NutriGen AI</div>
-            <div class="sidebar-subtitle">Personal Nutrition & Meal Planner</div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-    st.sidebar.caption("Powered by Generative AI")
-    st.sidebar.markdown("---")
+    """Render sidebar branding (deprecated/no-op for cleaner UI)."""
+    pass
+
 

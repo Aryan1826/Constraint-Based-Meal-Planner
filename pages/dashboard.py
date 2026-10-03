@@ -99,8 +99,6 @@ with col4:
         unsafe_allow_html=True
     )
 
-st.markdown("<br>", unsafe_allow_html=True)
-
 # Two-column layout for Today's Meal Plan & Quick Navigation
 left_col, right_col = st.columns([1.6, 1.2], gap="large")
 
@@ -116,7 +114,6 @@ with left_col:
             st.markdown("#### Vegetable Poha")
             st.caption("⏱️ 15 mins • 280 kcal • Light & Nutritious")
         with b_col2:
-            st.markdown("<br>", unsafe_allow_html=True)
             if st.button("View Recipe", key="view_breakfast", use_container_width=True):
                 st.info("Vegetable Poha: Flattened rice sautéed with mustard seeds, turmeric, onions, potatoes, and lemon.")
 
@@ -128,7 +125,6 @@ with left_col:
             st.markdown("#### Dal Rice")
             st.caption("⏱️ 25 mins • 350 kcal • High Protein Comfort Meal")
         with l_col2:
-            st.markdown("<br>", unsafe_allow_html=True)
             if st.button("View Recipe", key="view_lunch", use_container_width=True):
                 st.info("Dal Rice: Yellow toor dal tempered with cumin, garlic, and ghee served with steamed rice.")
 
@@ -140,7 +136,6 @@ with left_col:
             st.markdown("#### Paneer Vegetable Curry")
             st.caption("⏱️ 30 mins • 410 kcal • Rich Protein & Fiber")
         with d_col2:
-            st.markdown("<br>", unsafe_allow_html=True)
             if st.button("View Recipe", key="view_dinner", use_container_width=True):
                 st.info("Paneer Vegetable Curry: Soft cottage cheese and garden veggies in a mildly spiced tomato gravy.")
 
@@ -153,23 +148,20 @@ with right_col:
         if st.button("Set Your Preferences →", key="qa_nav_pref", use_container_width=True):
             st.switch_page("pages/preferences.py")
 
-        st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("**2. Pantry & Available Stock**")
         if st.button("Manage Your Fridge →", key="qa_nav_fridge", use_container_width=True):
             st.switch_page("pages/fridge.py")
 
-        st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("**3. AI Meal Planning**")
         if st.button("Create Meal Plan →", key="qa_nav_plan", use_container_width=True):
             st.switch_page("pages/meal_planner.py")
 
-        st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("**4. AI Recipes & Substitutions**")
         if st.button("Explore Recipes →", key="qa_nav_recipes", use_container_width=True):
             st.switch_page("pages/recipes.py")
 
-        st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("**5. Conversational Nutritionist**")
         if st.button("Ask AI Assistant →", key="qa_nav_assistant", use_container_width=True):
             st.switch_page("pages/ai_assistant.py")
+
 

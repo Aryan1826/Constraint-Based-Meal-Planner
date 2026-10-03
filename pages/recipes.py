@@ -82,7 +82,6 @@ with gen_col1:
         meal_to_generate = selected_option
 
 with gen_col2:
-    st.markdown("<br>", unsafe_allow_html=True)
     generate_recipe_btn = st.button("✨ Generate Recipe", type="primary", use_container_width=True)
 
 # Handle Recipe Generation
@@ -125,8 +124,6 @@ if generated_recipe:
     with st.container(border=True):
         st.markdown(generated_recipe)
         
-    st.markdown("<br>", unsafe_allow_html=True)
-    
     # Actions: Regenerate & Clear
     r_col1, r_col2 = st.columns([1, 1])
     with r_col1:
@@ -308,7 +305,6 @@ if find_sub_btn:
 # Render AI Substitution Results (if available)
 substitution_result = st.session_state.get("substitution_result")
 if substitution_result:
-    st.markdown("<br>", unsafe_allow_html=True)
     with st.container(border=True):
         st.markdown(substitution_result)
         
@@ -358,8 +354,6 @@ for r in filtered_recipes:
             badge_class = "badge-green" if r["difficulty"] == "Beginner" else "badge-orange"
             st.markdown(f"<span class='badge {badge_class}'>{r['difficulty']}</span> <span class='badge badge-blue'>{r.get('calories', '')}</span>", unsafe_allow_html=True)
             
-        st.markdown("<br>", unsafe_allow_html=True)
-        
         # Action Row: Expander & AI Generate Button
         c_exp, c_gen = st.columns([3, 1.2])
         with c_exp:
